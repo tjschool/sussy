@@ -39,8 +39,15 @@ Sussy
     font-weight: lighter;
 
     }
-  </style><h1 id="clock">10:47</h1></div>
+  </style><h1 id="clock"></h1></div>
   
 
+<script>
 
+var today = new Date();
+
+var time = today.getHours() + ":" + today.getMinutes();
+
+document.getElementById('clock').innerHTML = time;
+</script>
 </body></html>
