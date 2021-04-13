@@ -43,13 +43,16 @@ Sussy
   
 
 <script>
-while (true) {
+window.onload = function() { setInterval( timeNow, 100); }
+
+function timeNow(){
   
 var today = new Date();
 
 var time = today.getHours() + ":" + today.getMinutes();
 
 document.getElementById('clock').innerHTML = time;
+
 }
 </script>
 </body></html>
