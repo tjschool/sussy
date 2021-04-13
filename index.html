@@ -56,9 +56,9 @@ var time = today.getHours() + ":" + today.getMinutes();
 document.getElementById('clock').innerHTML = time;
 
 }
-  
-  $(function() {
-var body = $(‘body’);
+  window.onload = function() { setInterval( pictureUpdate, 100); }
+function pictureUpdate() {
+var body = document.getElementById('body');
 var backgrounds = new Array(
 url('https://www.pixelstalk.net/wp-content/uploads/2016/04/Desktop-landscape-wallpaper-HD-1.jpg'),
 url('http://wallpapercave.com/wp/nrMj4e5.jpg'),
