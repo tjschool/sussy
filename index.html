@@ -30,25 +30,25 @@ Sussy
     <source src="music/1-05 500 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="6a">
-    <source src="music/1-06 600 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-06 600 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="7a">
-    <source src="music/1-07 700 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-07 700 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="8a">
-    <source src="music/1-08 800 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-08 800 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="9a">
-    <source src="music/1-09 900 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-09 900 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="10a">
-    <source src="music/1-10 1000 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-10 1000 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="11a">
-    <source src="music/2-11 1100 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-11 1100 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="12p">
-    <source src="music/2-12 1200 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+    <source src="music/1-12 Noon (~Sunny Weather~).mp3" type="audio/mpeg">
 </audio>
 <audio id="1p">
     <source src="music/2-01 100 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
@@ -126,6 +126,8 @@ Sussy
 window.onload = function() { setInterval( timeNow, 100); }
 
 function timeNow(){
+
+
   
 var today = new Date();
 
@@ -133,6 +135,10 @@ var hours = today.getHours();
 var musichours = today.getHours();
   
 var minutes = today.getMinutes();
+
+if (musichours = 0) {
+    hours = 12;
+}
   
 if (minutes <= 9 ) {
   minutes = "0" + minutes;
@@ -141,26 +147,37 @@ if (minutes <= 9 ) {
 if (hours > 12) {
     hours = hours - 12;
 }
+
+
     
 if (hours <= 9 ) {
-  hours = "0" + hours;
+  zerohours = "0" + hours;
 }
+
   
-var time = hours + ":" + minutes;
+var time = zerohours + ":" + minutes;
 
 document.getElementById('clock').innerHTML = time;
 
+if (musichours > 12){
+    song = hours + "p";
+} else {
+    song = hours + "a";
+}
     
-if (musichours === 19) {
-    document.getElementById("6p").pause();
-    document.getElementById("7p").play();   
+if (musichours > 11){
+    prevsong = hours + "p";
+} else {
+    prevsong = hours + "a";
 }
-if (musichours === 20) {
-    document.getElementById("7p").pause();
-    document.getElementById("8p").play();   
-} 
 
+    document.getElementById(song).play();
+    document.getElementById(prevsong).play();
 }
+weatherinfo = fetch("http://api.weatherapi.com/v1/current.json?key=7bcb740be4334ae49f902133210411&q=London");
+weather = weatherinfo.current.condition.text();
+    
+
 
 </script>
 </body></html>
