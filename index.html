@@ -10,6 +10,80 @@ Sussy
 <body id="body" data-new-gr-c-s-check-loaded="14.1005.0" data-gr-ext-installed="" style="
     overflow: hidden;
 ">
+<!-- Hidden Music Files -->
+<audio id="12a">
+    <source src="music/2-12 Midnight (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="1a">
+    <source src="music/1-01 100 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="2a">
+    <source src="music/1-02 200 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="3a">
+    <source src="music/1-03 300 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="4a">
+    <source src="music/1-04 400 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="5a">
+    <source src="music/1-05 500 a.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="6a">
+    <source src="music/1-06 600 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="7a">
+    <source src="music/1-07 700 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="8a">
+    <source src="music/1-08 800 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="9a">
+    <source src="music/1-09 900 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="10a">
+    <source src="music/1-10 1000 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="11a">
+    <source src="music/2-11 1100 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="12p">
+    <source src="music/2-12 1200 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="1p">
+    <source src="music/2-01 100 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="2p">
+    <source src="music/2-02 200 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="3p">
+    <source src="music/2-03 300 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="4p">
+    <source src="music/2-04 400 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="5p">
+    <source src="music/2-05 500 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="6p">
+    <source src="music/2-06 600 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="7p">
+    <source src="music/2-07 700 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="8p">
+    <source src="music/2-08 800 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="9p">
+    <source src="music/2-09 900 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="10p">
+    <source src="music/2-10 1000 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+<audio id="11p">
+    <source src="music/2-11 1100 p.m. (~Sunny Weather~).mp3" type="audio/mpeg">
+</audio>
+    
   <div id="black" style="
     background: rgba(0,0,0,.7);
     width: 100%;
@@ -56,16 +130,35 @@ function timeNow(){
 var today = new Date();
 
 var hours = today.getHours();
+var musichours = today.getHours();
   
 var minutes = today.getMinutes();
   
 if (minutes <= 9 ) {
   minutes = "0" + minutes;
 }
+
+if (hours > 12) {
+    hours = hours - 12;
+}
+    
+if (hours <= 9 ) {
+  hours = "0" + hours;
+}
   
 var time = hours + ":" + minutes;
 
 document.getElementById('clock').innerHTML = time;
+
+    
+if (musichours === 19) {
+    document.getElementById("6p").pause();
+    document.getElementById("7p").play();   
+}
+if (musichours === 20) {
+    document.getElementById("7p").pause();
+    document.getElementById("8p").play();   
+} 
 
 }
 
