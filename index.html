@@ -132,11 +132,11 @@ function timeNow(){
 var today = new Date();
 
 var hours = today.getHours();
-var Musichours = today.getHours();
-  
+var musichours = today.getHours();
+
 var minutes = today.getMinutes();
 
-if (Musichours = 0) {
+if (musichours = 0) {
     hours = 12;
 }
   
@@ -155,17 +155,17 @@ if (hours <= 9 ) {
 }
 
   
-var time = zerohours + ":" + minutes;
+var time = hours + ":" + minutes;
 
 document.getElementById('clock').innerHTML = time;
 
-if (Musichours > 12){
+if (today.getHours() > 12){
     song = hours + "p";
 } else {
     song = hours + "a";
 }
     
-if (Musichours > 11){
+if (today.getHours() > 11){
     prevsong = hours + "p";
 } else {
     prevsong = hours + "a";
